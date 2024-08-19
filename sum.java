@@ -6,7 +6,8 @@
  "Sum of first N natural numbers" 
 */
 
-//In the first example we are using the math formula for calculating the sum giving us output in constant time O(1)
+/*In the first example we are using the math formula for calculating the sum giving us output in constant time. So time complexity is O(1) as the sum is calculated once. Like suppose n=5, then the function call will return value of sum = 5*(5+1)/= 5*6/2 = 5*3 =15
+*/
 class sum{
     static int func1(int n){
       return n*(n+1)/2;
@@ -16,4 +17,4 @@ class sum{
         System.out.println(sum);
     }
 }
-
+// In the next example we are using loops and temporary variable to find the sum of first n natural numbers, giving us output in linear time which is more than first exmaple. So time complexity is O(n) as the loop will calculate the value of temp variable for (n times) at each iteration.
