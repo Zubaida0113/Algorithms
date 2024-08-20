@@ -25,9 +25,9 @@ public class right_rotation {
         }
 
         // Print the new array
-        for (int i = 0; i < newArr.length; i++) {
-            System.out.print(newArr[i]+" ");
-        }
+       // for (int i = 0; i < newArr.length; i++) {
+       //     System.out.print(newArr[i]+" ");
+       // }
     }
 
     public static void main(String[] args) {
@@ -42,5 +42,8 @@ public class right_rotation {
         int n = arr.length;
 
         insert(arr, n, pos, element);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        }
     }
 }
