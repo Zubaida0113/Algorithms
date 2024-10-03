@@ -1,4 +1,4 @@
-class missingNumber {
+class missingNumber{
     public int missingNum(int[] nums) {
         int n = nums.length;
         int sum1 = (n * (n + 1)) / 2;
