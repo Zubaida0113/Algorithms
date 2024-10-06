@@ -1,5 +1,5 @@
 public class moveZeroes {
-    public static void moveZeroes(int[] a) {
+    public static void moveZero(int[] a) {
         int n = a.length;
         int i = 0;
         int j=0;
@@ -19,7 +19,7 @@ public class moveZeroes {
     public static void main(String[] args) {
         
         int[] a = {0, 1, 0, 3, 12};
-        moveZeroes(a);
+        moveZero(a);
         for (int i : a) {
             System.out.print(i + " ");
         }
