@@ -1,6 +1,8 @@
 // Example of 1-D memoization
 // Time complexity - O(N)
 // Space complexity - O(N)
+
+// Find the nth fibonacci number
 import java.util.*;
 public class fibonacci_DP {
     static final long MOD = 1000000007; // Use modulus to handle large values.
@@ -66,5 +68,33 @@ public class fibonacci_DP {
                 System.out.println("~");
             }
         }
+    }
+}
+
+// 1ms time compexity  TOP-DOWN
+class Solution {
+    int[] dp=new int[100000];;
+    public int fib(int n) {
+        if(n==0 || n==1){
+            return n;
+        }
+        if(dp[n]!=0){
+            return dp[n];
+        }
+       return dp[n]= fib(n-1)+fib(n-2);
+        }
+}
+// 0ms time complexity TABULATION
+class Solution1 {
+    public int fib(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        int[] dp=new int[n+1];
+        dp[0]=0;
+        dp[1]=1;
+        for(int i=2;i<=n;i++){
+           dp[i]= dp[i-1]+dp[i-2];
+         }
+        return dp[n];
     }
 }
