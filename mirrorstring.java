@@ -1,48 +1,31 @@
-public class mirrorstring {
-    public static int common(String s1, String s2, int n, int m) {
-        if (m == 0 || n == 0) {
-            return 0;
+// Idea - if the lcs of str and its reverse str is same then it has a palindromic subsequence.
+class Solution {
+    public int longestPalindromeSubseq(String s) {
+        String rev = new StringBuilder(s).reverse().toString();
+        return longestCommonSubsequence(s, rev);
+    }
+    public int longestCommonSubsequence(String text1, String text2) {
+        int n = text1.length();
+        int m = text2.length();
+        int[][] dp = new int[n + 1][m + 1];
+
+        // Bottom-up dynamic programming approach
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
+                    dp[i][j] = 1 + dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
         }
-        if (s1.charAt(n - 1) == s2.charAt(m - 1)) {
-            return 1 + common(s1, s2, n - 1, m - 1);
-        } else {
-            return Math.max(common(s1, s2, n - 1, m), common(s1, s2, n, m - 1));
-        }
-    }
 
-    public static String reverseString(String str) {
-        StringBuilder sb = new StringBuilder(str);
-        return sb.reverse().toString();
+        return dp[n][m];
     }
-
-    public static boolean isPalindrome(String str) {
-        return str.equals(reverseString(str));
-    }
-
     public static void main(String[] args) {
-        String s1 = "SEA";
-        String s2 = "EAT";
-        String r1 = reverseString(s1);
-        String r2 = reverseString(s2);
-        int lcs = common(s1, s2, s1.length(), s2.length());
-        int revlcs = common(r1, r2, r1.length(), r2.length());
-        
-        System.out.println("LCS of original strings: " + lcs);
-        System.out.println("LCS of reversed strings: " + revlcs);
-        
-        // Check if the original strings are palindromes
-        boolean isS1Palindrome = isPalindrome(s1);
-        boolean isS2Palindrome = isPalindrome(s2);
-        
-        // Print palindrome results
-        System.out.println(s1 + " is palindrome: " + isS1Palindrome);
-        System.out.println(s2 + " is palindrome: " + isS2Palindrome);
-        
-        // Check if LCS values indicate palindrome-like behavior
-        if (lcs == revlcs ) {
-            System.out.println("Both strings are palindromes and LCS is: " + lcs);
-        } else {
-            System.out.println("Strings are not palindromes or LCS values do not match.");
-        }
+        Solution solution = new Solution();
+        String testString = "bbbab"; // Example input
+        int result = solution.longestPalindromeSubseq(testString);
+        System.out.println("Longest Palindromic Subsequence Length: " + result);
     }
 }
