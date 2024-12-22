@@ -1,3 +1,6 @@
+// Example of 1-D memoization
+// Time complexity - O(N)
+// Space complexity - O(N)
 import java.util.*;
 public class fibonacci_DP {
     static final long MOD = 1000000007; // Use modulus to handle large values.
@@ -12,12 +15,22 @@ public class fibonacci_DP {
         if (n <= 1) {
             return n;
         }
-
+    // if topDownHelper(n) has already 
+    // been computed we do not
+    // do further recursive 
+    // calls and hence reduce 
+    // the number of repeated
+    // work
         if (dp[n] != -1) {
             return dp[n];
         }
-
+        // store the computed value
+        // of topDownHelper(n) in an array 
+        // dp at index n to so that 
+        // it does not needs to be 
+        // precomputed again
         dp[n] = (topDownHelper(n - 1, dp) % MOD + topDownHelper(n - 2, dp) % MOD) % MOD;
+
         return dp[n];
     }
 
