@@ -26,6 +26,10 @@ class sum{
 /* 2. In the second example we are using loops and temporary variable to find the sum of first n natural numbers, giving us output in linear time which is more than first exmaple. So time complexity is O(n) as the loop will calculate the value of temp variable for (n times) at each iteration. The space or memory used here is constant.
 
 
+
+  Time complexity = O(1)
+    Space complexity = O(1)
+*/
 class sum{
   static int func1(int n){
     int ans=0;
@@ -39,6 +43,3 @@ class sum{
       System.out.println(sum);
   }
 }
-  Time complexity = O(1)
-    Space complexity = O(1)
-*/
