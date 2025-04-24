@@ -2,7 +2,7 @@ package SEARCHING_ALGORITHMS;
 
 import java.util.HashSet;
 
-class findReapeatingNum{
+class findRepeatingNum{
 
     // Function to find the repeating number
     //BRUTE FORCE - O(n^2)
@@ -15,7 +15,7 @@ class findReapeatingNum{
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (arr[i] == arr[j]) {
-                    return arr[i];
+                    return i;
                 }
             }
         }
@@ -40,7 +40,7 @@ class findReapeatingNum{
             set.add(arr[i]);
         }
 
-        return minIndex == Integer.MAX_VALUE ? -1 : arr[minIndex];
+        return minIndex == Integer.MAX_VALUE ? -1 : minIndex;
     }
     public static void main(String[] args) {
         int[] arr= {1, 2, 5, 3, 4, 5, 3};
