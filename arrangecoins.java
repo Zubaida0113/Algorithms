@@ -1,4 +1,5 @@
-public class ArrangeCoins {
+
+public class arrangecoins {
     public int arrangeCoins(int n) {
         int i = 1;
         while (n >= i) {
@@ -29,7 +30,7 @@ public class ArrangeCoins {
         }
     }
     public static void main(String[] args) {
-        ArrangeCoins ac = new ArrangeCoins();
+        arrangecoins ac = new arrangecoins();
         Solution solution = ac.new Solution();
         System.out.println(ac.arrangeCoins(8));
         System.out.println(solution.arrangeCoinss(8));

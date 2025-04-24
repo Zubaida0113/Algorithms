@@ -121,7 +121,7 @@ public class BinaryTree {
         tree.delete(50);
         System.out.println("\nInorder traversal after deletion:");
         tree.inorder();
-        tree.postorderRec();
+        tree.postorder();
         tree.preorder();
     }
 }
