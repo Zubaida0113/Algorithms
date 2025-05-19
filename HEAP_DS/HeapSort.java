@@ -38,19 +38,27 @@ public class HeapSort {
         for (int i = lastNonLeafNode; i >= 0; i--) {
             maxheapify(arr, n, i);
         }
-        //this part is added to create heap sort
-        // One by one extract an element from heap
-        for (int i = n - 1; i > 0; i--) {
+    }
+    static void heapSort(int arr[]) {
+        int n = arr.length;
+        // Step 1: Build max heap
+        buildMaxHeap(arr, n);
 
+        // Step 2: One by one extract elements from heap
+        // Move current root(which is max element) to end node 
+        //and add it to the end of the unsorted array
+        for (int i = n - 1; i > 0; i--) {
             // Move current root to end
-            int temp = arr[0]; 
+            int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
 
-            // Call max heapify on the reduced heap
+            // Call maxheapify on the reduced heap
             maxheapify(arr, i, 0);
         }
     }
+
+
     // A utility function to print the array
     // representation of Heap
     static void printHeap(int arr[], int n) {
@@ -71,7 +79,7 @@ public static void main(String[] args) {
           
         int arr[] = {4,10,3,5,1};
         int n = arr.length;
-        buildMaxHeap(arr, n);
+        heapSort(arr);
         printHeap(arr, n);
     }
 }
