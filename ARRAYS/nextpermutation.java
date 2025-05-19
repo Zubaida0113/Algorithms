@@ -1,6 +1,5 @@
 package ARRAYS;
 
-
 class Solution {
     void nextPermutation(int[] arr) {
         // code here
@@ -37,11 +36,9 @@ class Solution {
     }
 }
 
-
 //{ Driver Code Starts.
 
 public class nextpermutation  {
-
     public static void main(String[] args) throws Exception {
        int [] arr = {2,4,1,7,5,0};
         Solution obj = new Solution();
