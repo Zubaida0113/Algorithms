@@ -6,6 +6,8 @@ package HEAP_DS;
 public class HeapSort {
     // To heapify a subtree rooted with node i which is
     // an index in arr[]. N is size of heap
+
+    //TOP-DOWN HEAPIFY where we start from the root(parent) and go downwards(child)
     static void maxheapify(int arr[], int n, int i) {
         int largest = i; // Initialize largest as root
         int l = 2 * i + 1; // left = 2*i + 1
@@ -55,7 +57,6 @@ public class HeapSort {
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
-
             // Call maxheapify on the reduced heap
             maxheapify(arr, i, 0);
         }
