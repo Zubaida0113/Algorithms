@@ -1,5 +1,8 @@
 package HEAP_DS;
 
+//Q: You're given an array of integers. Implement Heap Sort to sort the array in ascending order 
+//using a Max Heap, without using any comparator or built-in heap utilities like priority_queue.
+
 public class HeapSort {
     // To heapify a subtree rooted with node i which is
     // an index in arr[]. N is size of heap
