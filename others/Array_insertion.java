@@ -1,3 +1,4 @@
+package others;
 public class Array_insertion {
     // This function returns n+1 if insertion is successful, else n.
     static int insertEnd(int arr[], int n, int capacity, int key) {

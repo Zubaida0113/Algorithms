@@ -1,3 +1,4 @@
+package others;
 
 public class arrangecoins {
     public int arrangeCoins(int n) {

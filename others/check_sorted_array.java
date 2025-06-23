@@ -1,3 +1,4 @@
+package others;
 /*Ques- To check if an Array is Sorted or not(Iterative approach)
  * Concept- 1. If length of array is less than equal to 1 , array is already sorted -> no need to follow loop
  *             -> Getting best case O(N). (Eg.- arr[]={5} ) 
