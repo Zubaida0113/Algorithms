@@ -25,22 +25,41 @@ public class goodSubarray {
                 l++;
             }
 
+            //negative case
+            if(currsum<0){
+                currsum=0;
+                freq.clear();
+                l=r+1;
+          }
+
             maxsum = Math.max(maxsum,currsum);
         }
         return maxsum;
     }
     public static void main(String[] args) throws IOException{
-        //fast input
+        long start = System.nanoTime();  // Start timing
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       
+        PrintWriter out = new PrintWriter(System.out);  // Fast output
 
         int n = Integer.parseInt(br.readLine().trim());
         int k = Integer.parseInt(br.readLine().trim());
         int[] A = new int[n];
-        for (int i = 0; i < n; i++) {
-            A[i] = Integer.parseInt(br.readLine().trim());
+
+        // Efficient input using StringTokenizer
+        int i = 0;
+        while (i < n) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            while (st.hasMoreTokens() && i < n) {
+                A[i++] = Integer.parseInt(st.nextToken());
+            }
         }
 
-        System.out.println(maxSumGoodSubarray(A,n,k));
+        out.println(maxSumGoodSubarray(A, n, k));  // Fast output
+        out.flush();  // Don't forget to flush
+        long end = System.nanoTime();
+System.out.println("Time taken: " + (end - start) / 1_000_000 + " ms");
         // this is for input like this 
         // 11
         // 2
@@ -57,3 +76,25 @@ public class goodSubarray {
         // System.out.println(sum);
     }
 }
+// test case 1   o/p - 6    
+// 5
+// 5
+// -1
+// 1
+// 3
+// 2
+// -1
+// test case 2 o/p - 12
+// 11   
+// 2
+// 1
+// 2
+// 2
+// 3
+// 2
+// 3
+// 5
+// 1
+// 2
+// 1
+// 1
