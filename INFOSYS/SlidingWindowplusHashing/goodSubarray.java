@@ -1,4 +1,4 @@
-package INFOSYS;
+package INFOSYS.SlidingWindowplusHashing;
 
 import java.io.*;
 import java.util.*;
@@ -28,7 +28,7 @@ public class goodSubarray {
             //negative case
             if(currsum<0){
                 currsum=0;
-                freq.clear();
+                freq.clear();//reset map 
                 l=r+1;
           }
 
