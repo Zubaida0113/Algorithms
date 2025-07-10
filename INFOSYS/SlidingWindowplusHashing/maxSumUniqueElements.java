@@ -5,6 +5,7 @@ import java.util.*;
 
 /*1. Maximum sum contiguous subarray with all unique elements
 Description: Given an array, find the contiguous subarray where all elements are distinct and the sum is maximum.
+Type: max subarray sum with unique elements with no fixed length 
 Example:
 Input: [1, 2, 3, 3, 4, 5, 2, 1] → Output: 15, for subarray [3, 4, 5, 2, 1] 
  */
