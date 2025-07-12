@@ -14,7 +14,7 @@ public class RangeSum {
             seg[idx]=arr[low];
             return;
         }
-        int mid=high+(high-low)/2;
+        int mid=low+(high - low)/2;
         build_St(2*idx+1,low,mid);
         build_St(2*idx+2,mid+1,high);
         seg[idx]= seg[2*idx+1] + seg[2*idx+2];
@@ -58,7 +58,7 @@ public class RangeSum {
             arr[i]=sc.nextInt();
         }
         build_St(0,0,n-1); // Build the segment tree
-        while(q-->0){
+        while(q--> 0){
             // Read the type of query
             int type = sc.nextInt();
             if(type==2){ // Query for range sum
